@@ -20,7 +20,7 @@ N  = length(P);
 t  = [0:N-1]*dt;
 
 ampl = eta_det * eta_out * sqrt( P .* circshift(P, l));
-arg  = phi - circshift(phi, l) - deltaOmega * t;
+arg  = phi - circshift(phi, l) - deltaOmega * t;         % 2 * pi * deltaOmega * t
 
 I_no_noise =  ampl .* cos(arg);
 Q_no_noise =  ampl .* sin(arg);

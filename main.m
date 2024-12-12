@@ -4,6 +4,7 @@ clc
  % add subdirectories to path
    addpath('distributions/')
    addpath('functions/')
+   addpath('functions_rkp\')
    addpath('simulation//')
    addpath('scripts/')   
       

@@ -24,7 +24,8 @@
   
  
   %% DSH measurement raw data
-     S_zz   = (2*pi*f_meas).^2 .* PSD(phase_signal, dt_meas, par.hann_window_switch); % phase_signal =  dphi(t) - dphi(t-tau)   + noise
+     S_zz   = (2*pi*f_meas).^2 .* PSD(phase_signal ...
+         , dt_meas, par.hann_window_switch); % phase_signal =  dphi(t) - dphi(t-tau)   + noise
                     
         
   %% inverse filter
@@ -166,7 +167,7 @@
      nu_est    = nu_nlinLSQ;
      sigma_est = sigma_fit;
      
-     plot_switch = 0;
+     plot_switch = 1;
      
      S_xx_model     = @(S_inf) C_est./f_meas(idx).^nu_est + S_inf;
      SNR            = @(S_inf) S_xx_model(S_inf)./(sigma_est^2 * f_meas(idx).^2);
